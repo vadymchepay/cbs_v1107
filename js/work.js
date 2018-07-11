@@ -20,10 +20,8 @@ function animatedTitle() {
         var spanWidth = videoNameSpan.width();
         var ssMarginLeft = spanWidth / 2;
         var secondSpan = '<span id="shadowSpan" style="margin-left: ' + ssMarginLeft + 'px">' + titleText + '</span>'
-        
-        if (!videoName.hasClass('title-animated')) {
-//            videoName.append(secondSpan);
-           $.when(videoName.append(secondSpan)).then(videoName.addClass('title-animated'))
+
+        if (!videoName.hasClass('title-animated')) {           $.when(videoName.append(secondSpan)).then(videoName.addClass('title-animated'))
         }
         var anMarginLeft = spanWidth + ssMarginLeft;
 
@@ -49,8 +47,7 @@ $(document).ready(function () {
         if (viewWidth > 767) {
             workReelNew();
             onExpore = true;
-        }
-        else {
+        } else {
             workReel();
             onExpore = true;
         }
@@ -64,12 +61,12 @@ $(document).ready(function () {
         }).animate({
             blurRadius: 0
         }, {
-            duration: 1000
-            , easing: 'swing'
-            , step: function () {
+            duration: 1000,
+            easing: 'swing',
+            step: function () {
                 $('#video-bg .blur').css({
-                    "-webkit-filter": "blur(" + this.blurRadius + "px)"
-                    , "filter": "blur(" + this.blurRadius + "px)"
+                    "-webkit-filter": "blur(" + this.blurRadius + "px)",
+                    "filter": "blur(" + this.blurRadius + "px)"
                 });
             }
         });
@@ -91,12 +88,12 @@ $(document).ready(function () {
         }).animate({
             blurRadius: 0
         }, {
-            duration: 1000
-            , easing: 'swing'
-            , step: function () {
+            duration: 1000,
+            easing: 'swing',
+            step: function () {
                 $('#video-bg .blur').css({
-                    "-webkit-filter": "blur(" + this.blurRadius + "px)"
-                    , "filter": "blur(" + this.blurRadius + "px)"
+                    "-webkit-filter": "blur(" + this.blurRadius + "px)",
+                    "filter": "blur(" + this.blurRadius + "px)"
                 });
             }
         });
@@ -118,12 +115,12 @@ $(document).ready(function () {
         }).animate({
             blurRadius: 0
         }, {
-            duration: 1000
-            , easing: 'swing'
-            , step: function () {
+            duration: 1000,
+            easing: 'swing',
+            step: function () {
                 $('#video-bg .blur').css({
-                    "-webkit-filter": "blur(" + this.blurRadius + "px)"
-                    , "filter": "blur(" + this.blurRadius + "px)"
+                    "-webkit-filter": "blur(" + this.blurRadius + "px)",
+                    "filter": "blur(" + this.blurRadius + "px)"
                 });
             }
         });
@@ -163,8 +160,7 @@ $(document).ready(function () {
         if (!onExpore && lastY > currentY) {
             workReel();
             onExpore = true;
-        }
-        else if (pos === 0 && onExpore === true && lastY < currentY) {
+        } else if (pos === 0 && onExpore === true && lastY < currentY) {
             showReel()
             onExpore = false;
         }
@@ -180,8 +176,7 @@ $(document).ready(function () {
         $("#legal-notice").toggle();
         if (!legalTriger) {
             legalTriger = true;
-        }
-        else {
+        } else {
             legalTriger = false;
         }
     });
@@ -242,8 +237,7 @@ $(document).ready(function () {
             for (i = 0; i < $("#workCarousel .item video").length; i++) {
                 $("#workCarousel .item video").get(i).pause();
             }
-        }
-        else {
+        } else {
             $("#work-section").show();
             $(".work-carousel-control").show();
             $("#workCarousel .carousel-caption").hide();
@@ -256,6 +250,9 @@ $(document).ready(function () {
             $("#home").toggle();
             $("#legal-notice").toggle();
         }
+        var volRange = $("#vol-range");
+        $("input#vol-range").val(allVolChange*10);
+        
     });
     $(window).scroll(function () {
         var sPos = $(this).scrollTop();
@@ -296,8 +293,7 @@ $(document).ready(function () {
         $("#selectedCarousel").next();
         if (selVidCount >= $("#selectedCarousel .carousel-inner .item").length) {
             selVidCount = $("#selectedCarousel .carousel-inner .item").length
-        }
-        else {
+        } else {
             selVidCount++;
         };
     });
@@ -305,8 +301,7 @@ $(document).ready(function () {
         if (selVidCount > 1 && selVidCount <= $("#selectedCarousel .carousel-inner .item").length) {
             selVidCount--;
             $("#selectedCarousel").prev();
-        }
-        else {
+        } else {
             $("#watch-movies").show();
             $("#work-all-section").hide();
             $(".work-carousel-control").hide();
@@ -317,8 +312,8 @@ $(document).ready(function () {
                     onExpore = true;
                 }
                 $("#top-section").css({
-                    position: 'relative'
-                    , 'z-index': '1'
+                    position: 'relative',
+                    'z-index': '1'
                 }).show();
             }, 400);
             $("#work-section").animate({
@@ -370,22 +365,22 @@ $(document).ready(function () {
         var temparray = [];
         $.each(videosjson, function (key, data) {
             var video = {
-                project_id: data.projectid
-                , post_title_de: data.posttitlede
-                , post_title_en: data.posttitleen
-                , descr_de: data.descrde
-                , descr_en: data.descren
-                , country: data.country
-                , city_de: data.cityde
-                , city_en: data.cityen
-                , client: data.client
-                , producer_1: data.producer1
-                , producer_2: data.producer2
-                , producer_3: data.producer3
-                , year: data.year
-                , cliplength: data.cliplength
-                , timestamp: data.timestamp1
-                , isSelected: data.isselected
+                project_id: data.projectid,
+                post_title_de: data.posttitlede,
+                post_title_en: data.posttitleen,
+                descr_de: data.descrde,
+                descr_en: data.descren,
+                country: data.country,
+                city_de: data.cityde,
+                city_en: data.cityen,
+                client: data.client,
+                producer_1: data.producer1,
+                producer_2: data.producer2,
+                producer_3: data.producer3,
+                year: data.year,
+                cliplength: data.cliplength,
+                timestamp: data.timestamp1,
+                isSelected: data.isselected
             };
             if (data.enabled === 1) {
                 temparray.push(video);
@@ -405,8 +400,7 @@ $(document).ready(function () {
                     descr = workVideoArray[index].descr_de;
                     clientLabel = 'Klient: ';
                     producerLabel = 'Hersteller: '
-                }
-                else {
+                } else {
                     title = workVideoArray[index].post_title_en;
                     city = workVideoArray[index].city_en;
                     descr = workVideoArray[index].descr_en;
@@ -427,26 +421,22 @@ $(document).ready(function () {
                 }
                 if (workVideoArray[index].producer_2 === undefined) {
                     workVideoArray[index].producer_2 = ''
-                }
-                else {
+                } else {
                     workVideoArray[index].producer_2 = ', ' + workVideoArray[index].producer_2
                 }
                 if (workVideoArray[index].producer_3 === undefined) {
                     workVideoArray[index].producer_3 = ''
-                }
-                else {
+                } else {
                     workVideoArray[index].producer_3 = ', ' + workVideoArray[index].producer_3
                 }
                 if (workVideoArray[index].year === undefined) {
                     workVideoArray[index].year = ''
-                }
-                else {
+                } else {
                     workVideoArray[index].year = workVideoArray[index].year + '|'
                 }
                 if (workVideoArray[index].country === undefined) {
                     workVideoArray[index].country = ''
-                }
-                else {
+                } else {
                     workVideoArray[index].country = workVideoArray[index].country + '|'
                 }
                 var video = '<div id="selectedVideo' + selectedItems + '" class="item">\n' + '<video id="work-video-' + selectedItems + '" style="min-width: 110%; min-height: 100vh" playsinline>\n' + '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + workVideoArray[index].project_id + '_transcoded_1080.mp4" type="video/mp4">\n' + '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + workVideoArray[index].project_id + '_transcoded_1080.webm" type="video/webm">\n' + '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + workVideoArray[index].project_id + '_transcoded_1080.ogg" type="video/ogg">\n' + '<h1>Something went went wrong... Reload the page please</h1>\n' + '</video>' + '<div class="carousel-caption">' + '<div class="caption-body">' + '<div>' + '<h1 class="video-name"><span>' + title + '</span></h1>' + '<h3 class="video-location">' + city + '</h3>' + '<p class="video-text">' + descr + '</p>' + '<p class="additional-info">' + clientLabel + workVideoArray[index].client + '<br>' + producerLabel + workVideoArray[index].producer_1 + workVideoArray[index].producer_2 + workVideoArray[index].producer_3 + '<br>' + workVideoArray[index].year + workVideoArray[index].country + (workVideoArray[index].cliplength / 60).toFixed(2) + 'min' + '</p>' + '</div>' + '</div>' + '</div>' + '</div>';
@@ -482,21 +472,21 @@ $(document).ready(function () {
             }
         });
         workinfobox = new InfoBox({
-            disableAutoPan: false
-            , maxWidth: 275
-            , pixelOffset: new google.maps.Size(5, -110)
-            , zIndex: null
-            , boxStyle: {
+            disableAutoPan: false,
+            maxWidth: 275,
+            pixelOffset: new google.maps.Size(5, -110),
+            zIndex: null,
+            boxStyle: {
                 background: "transparent", //opacity: 0.75,
                 width: "275px"
-            }
-            , closeBoxURL: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(btnClose.replace('{{ color }}', firstMarker.color).replace('{{ color2 }}', firstMarker.color))
-            , scaledSize: new google.maps.Size(35, 35)
-            , closeBoxMargin: "5px -25px -25px 0"
-            , infoBoxClearance: new google.maps.Size(1, 1)
-            , isHidden: false
-            , pane: "floatPane"
-            , enableEventPropagandation: false
+            },
+            closeBoxURL: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(btnClose.replace('{{ color }}', firstMarker.color).replace('{{ color2 }}', firstMarker.color)),
+            scaledSize: new google.maps.Size(35, 35),
+            closeBoxMargin: "5px -25px -25px 0",
+            infoBoxClearance: new google.maps.Size(1, 1),
+            isHidden: false,
+            pane: "floatPane",
+            enableEventPropagandation: false
         });
         openInfoBox(firstMarker);
         var workAllVideoSource = '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + firstMarker.id + '_transcoded_1080.mp4" type="video/mp4">\n' + '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + firstMarker.id + '_transcoded_1080.webm" type="video/webm">\n' + '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + firstMarker.id + '_transcoded_1080.ogg" type="video/ogg">\n' + '<h1>Something went went wrong... Reload the page please</h1>\n';
@@ -567,8 +557,7 @@ $(document).ready(function () {
                     }
                     slideIndex++;
                     renderVideos(slideIndex, true);
-                }
-                else {
+                } else {
                     panVideoMarker($("#workCarousel .item:first-child"));
                     var fcId = $("#workCarousel .item.active").attr('id');
                     updateVideo(fcId);
@@ -589,8 +578,7 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $("body").css('pointer-events', 'auto');
                 }, 600);
-            }
-            else {
+            } else {
                 $('.video-control-1').remove();
                 $('.video-control-current').remove();
                 $("body").css('pointer-events', 'none');
@@ -613,8 +601,7 @@ $(document).ready(function () {
                     }
                     slideIndex++;
                     renderVideos(slideIndex, true);
-                }
-                else {
+                } else {
                     updateAllWorkVideo($("#workCarousel .item:first-child"));
                     panVideoMarker($("#workCarousel .item:first-child"));
                     var fcId = $("#workCarousel .item:first-child").attr('id');
@@ -651,8 +638,7 @@ function renderVideos(index, right) {
     if (right) {
         $("#workCarousel .carousel-inner .item:first-child").remove();
         loadVideo(index + 2, true);
-    }
-    else {
+    } else {
         $("#workCarousel .carousel-inner .item:last-child").remove();
         loadVideo(index, false);
     }
@@ -661,14 +647,12 @@ function renderVideos(index, right) {
 function loadVideo(index, right) {
     if (index < -(workVideoArray.length - 1)) {
         slideIndex = 0;
-    }
-    else if (index > workVideoArray.length) {
+    } else if (index > workVideoArray.length) {
         slideIndex = -1
     }
     if (index < 0) {
         index = workVideoArray.length + index;
-    }
-    else if (index > workVideoArray.length - 1) {
+    } else if (index > workVideoArray.length - 1) {
         index = index - workVideoArray.length;
     }
     if ($('body').attr('id') === 'deutch') {
@@ -677,8 +661,7 @@ function loadVideo(index, right) {
         descr = workVideoArray[index].descr_de;
         clientLabel = 'Klient: ';
         producerLabel = 'Hersteller: '
-    }
-    else {
+    } else {
         title = workVideoArray[index].post_title_en;
         city = workVideoArray[index].city_en;
         descr = workVideoArray[index].descr_en;
@@ -699,26 +682,22 @@ function loadVideo(index, right) {
     }
     if (workVideoArray[index].producer_2 === undefined) {
         workVideoArray[index].producer_2 = ''
-    }
-    else {
+    } else {
         workVideoArray[index].producer_2 = ', ' + workVideoArray[index].producer_2
     }
     if (workVideoArray[index].producer_3 === undefined) {
         workVideoArray[index].producer_3 = ''
-    }
-    else {
+    } else {
         workVideoArray[index].producer_3 = ', ' + workVideoArray[index].producer_3
     }
     if (workVideoArray[index].year === undefined) {
         workVideoArray[index].year = ''
-    }
-    else {
+    } else {
         workVideoArray[index].year = workVideoArray[index].year + '|'
     }
     if (workVideoArray[index].country === undefined) {
         workVideoArray[index].country = ''
-    }
-    else {
+    } else {
         workVideoArray[index].country = workVideoArray[index].country + '|'
     }
     var itemTemplate = '<div id="' + workVideoArray[index].project_id + '" class="item">\n' + '<video id="work-video" style="min-width: 110%; min-height: 100vh" playsinline>\n' +
@@ -728,8 +707,7 @@ function loadVideo(index, right) {
         '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + workVideoArray[index].project_id + '_transcoded_1080.mp4" type="video/mp4">\n' + '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + workVideoArray[index].project_id + '_transcoded_1080.webm" type="video/webm">\n' + '<source src="http://vod.comberry.tne-dev.com:8800/raw/' + workVideoArray[index].project_id + '_transcoded_1080.ogg" type="video/ogg">\n' + '<h1>Something went went wrong... Reload the page please</h1>\n' + '</video>' + '<div class="carousel-caption">' + '<div class="caption-body">' + '<div>' + '<h1 class="video-name"><span class="main-title">' + title + '</span></h1>' + '<h3 class="video-location">' + city + '</h3>' + '<p class="video-text">' + descr + '</p>' + '<p class="additional-info">' + clientLabel + workVideoArray[index].client + '<br>' + producerLabel + workVideoArray[index].producer_1 + workVideoArray[index].producer_2 + workVideoArray[index].producer_3 + '<br>' + workVideoArray[index].year + workVideoArray[index].country + (workVideoArray[index].cliplength / 60).toFixed(2) + 'min' + '</p>' + '</div>' + '</div>' + '</div>' + '</div>';
     if (right) {
         $("#workCarousel .carousel-inner").append(itemTemplate);
-    }
-    else {
+    } else {
         $("#workCarousel .carousel-inner").prepend(itemTemplate);
     }
     // var minutes = parseInt(workVideoArray[index].timestamp.slice(0, 2));
@@ -748,8 +726,8 @@ function loadVideo(index, right) {
 }
 
 function shuffle(array) {
-    var currentIndex = array.length
-        , temporaryValue, randomIndex;
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
         // Pick a remaining element...

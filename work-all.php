@@ -22,7 +22,7 @@
                 <button type="button" id="all-play"><img src="img/video/play.png"></button>
             </div>
             <input id="all-seek" type="range" value="0">
-            <input id="vol-range" type="range" value="100">
+            <input id="vol-range" type="range" min="0" max="10" step="1">
             <button id="all-fullscreen" class="all-video-control"><img src="img/video/fullscreen_icon.png"></button>
             <button class="all-volume all-video-control"><img src="img/video/icon_volume_red_4.png"></button>
         </div>

@@ -550,7 +550,6 @@ function myMap() {
         $.each(markersjson, function (key, data) {
             var workdata = markersjson[i];
             var latLng = new google.maps.LatLng(data.gmapslat, data.gmapslng);
-            console.log(latLng);
             // Creating a marker and putting it on the map
             if (data.enabled === 1) {
                 var videomarker = new google.maps.Marker({

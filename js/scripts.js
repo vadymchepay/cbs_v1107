@@ -1,19 +1,10 @@
 var viewWidth = window.innerWidth;
 var menuOpened = false;
 var videovolumevar = 1;
-var allVolChange;
+var allVolChange = 1;
+
 $(document).ready(function () {
-    //    $("#contactCarousel .carousel-inner").swipe({
-    //        swipeRight: function (event, direction, distance, duration, fingerCount) {
-    //            $(this).parent().carousel('prev');
-    //            checkLocation(0);
-    //        },
-    //        swipeLeft: function () {
-    //            $(this).parent().carousel('next');
-    //            checkLocation(2);
-    //        },
-    //        threshold: 0
-    //    });
+
     var videopaused = false;
     if (viewWidth < 768) {
         workmap.setZoom(1);
@@ -73,7 +64,7 @@ $(document).ready(function () {
         }
     });
     $("#vol-range").on('change', function () {
-        allVolChange = $("#vol-range").get(0).value / 100;
+        allVolChange = $("#vol-range").get(0).value/10;
         $("#all-video").get(0).volume = allVolChange;
         if ($("#all-video").get(0).volume == 0) {
             $(".all-volume img").attr("src", "img/video/icon_volume_red_0.png");
@@ -92,10 +83,31 @@ $(document).ready(function () {
         }
     });
     $("#vol-range").on('mouseup', function () {
+        allVolChange = ($("#vol-range").val())/10;
+        $("#all-video").get(0).volume = allVolChange;
+        $("#vol-range").val(allVolChange*10);
+        if ($("#all-video").get(0).volume == 0) {
+            $(".all-volume img").attr("src", "img/video/icon_volume_red_0.png");
+        }
+        else if ($("#all-video").get(0).volume > 0 && $("#all-video").get(0).volume <= 0.25) {
+            $(".all-volume img").attr("src", "img/video/icon_volume_red_1.png");
+        }
+        else if ($("#all-video").get(0).volume > 0.25 && $("#all-video").get(0).volume <= 0.5) {
+            $(".all-volume img").attr("src", "img/video/icon_volume_red_2.png");
+        }
+        else if ($("#all-video").get(0).volume > 0.5 && $("#all-video").get(0).volume <= 0.75) {
+            $(".all-volume img").attr("src", "img/video/icon_volume_red_3.png");
+        }
+        else {
+            $(".all-volume img").attr("src", "img/video/icon_volume_red_4.png");
+        }
+        $("#vol-range").get(0).value = $("#all-video").get(0).volume*100;
+       
         if (volRangeTrigger) {
             $("#vol-range").hide();
             volRangeTrigger = false;
         }
+        
     });
     var mozFScr = false;
     var fullScreenButton = document.getElementById("all-fullscreen");
@@ -106,9 +118,6 @@ $(document).ready(function () {
         }
         else if (video.mozRequestFullScreen) {
             video.mozRequestFullScreen(); // Firefox
-            video.controls = true;
-            mozFScr = true;
-            console.log('mozFScr = ' + mozFScr);
         }
         else if (video.webkitRequestFullscreen) {
             video.webkitRequestFullscreen(); // Chrome and Safari
@@ -116,36 +125,15 @@ $(document).ready(function () {
     });
     
     $(document).bind('mozfullscreenchange', function(){
-        console.log('change');
+        var video = document.getElementById("all-video");
+        var state = document.mozFullScreen;
+        var event = state ? 'FullscreenOn' : 'FullscreenOff';
+        if (event === 'FullscreenOn') {
+            video.controls = true;
+        } else if (event === 'FullscreenOff') {
+            video.controls = false;
+        } 
     })
-    
-    
-//    var videoElement = document.getElementById("all-video");
-//
-//    function toggleFullScreen() {
-//        if (document.mozCancelFullScreen) {
-//            $.when(document.mozCancelFullScreen()).then(hideControls())
-//
-//            function hideControls() {
-//                videoElement.controls = false;
-//                mozFScr = false;
-//                console.log('mozFScr = ' + mozFScr);
-//                console.log(videoElement);
-//            }
-//        }
-//        else {
-//            document.webkitCancelFullScreen();
-//        }
-//    }
-//    document.addEventListener("keydown", function (e) {
-//        if (e.keyCode == 27 && mozFScr) {
-////            videoElement.removeAttribute('controls');
-////            mozFScr = false;
-////            console.log('mozFScr = ' + mozFScr);
-////            console.log(videoElement);
-//            toggleFullScreen()
-//        }
-//    }, false);
     
     
     $("#all-seek").bind('change', function () {
@@ -166,87 +154,7 @@ $(document).ready(function () {
         $("#all-video").get(0).play();
         $("#all-play").css('visibility', 'hidden');
     });
-    // $(".work-carousel-control").click(function () {
-    // createElementDataArray($("#workCarousel .item .video-name"), videoNamesArray);
-    // createElementDataArray($("#workCarousel .item .video-location"), videoLocationsArray);
-    // createElementDataArray($("#workCarousel .item .video-text"), videoInfoArray);
-    // createElementDataArray($("#workCarousel .item .additional-info"), videoAddInfo);
-    //
-    // $("#workCarousel .item video source").each(function() {
-    //     var temp = $( this ).attr('src');
-    //     temp = temp.toString();
-    //     videoMetaDataArray.push(temp);
-    // });
-    //
-    // if (viewWidth > 767) {
-    //     $(".carousel-caption").show();
-    // }
-    // for (i = 0; i<$("#workCarousel .item video").length; i++) {
-    //     $("#workCarousel .item video").get(i).pause();
-    // }
-    // var element;
-    // var activeItem;
-    // var direction;
-    // if($(this).hasClass('right')) {
-    //     activeItem = $("#workCarousel .item.active").next();
-    //     element = $("#workCarousel .item.active").next().find('video');
-    //     direction = true;
-    // } else {
-    //     activeItem = $("#workCarousel .item.active").prev();
-    //     element = $("#workCarousel .item.active").prev().find('video');
-    //     direction = false;
-    // }
-    // $(".video-control").css('visibility', 'hidden');
-    // var array = $('#workCarousel .item');
-    // for(i=0; i<array.length; i++) {
-    //     var index = i+1;
-    //     if ('video-'+index === element.attr('id')) {
-    //         $('.video-control').css('visibility', 'hidden');
-    //         $('.video-control-' + index).css('visibility', 'visible');
-    //         $("#all-video").find('source').attr('src', element.find('source').attr('src'));
-    //         document.getElementById("all-video").load();
-    //         $("#work-all-section .video-name").html(activeItem.find(".video-name").html());
-    //         $("#work-all-section .video-location").html(activeItem.find(".video-location").html());
-    //         $("#work-all-section .video-text").html(activeItem.find(".video-text").html());
-    //         $("#work-all-section .additional-info").html(activeItem.find(".additional-info").html());
-    //     } else if (direction && $("#workCarousel .item.active").find('video').attr('id') === 'video-'+array.length) {
-    //         $('.video-control').css('visibility', 'hidden');
-    //         $('.video-control-1').css('visibility', 'visible');
-    //         $("#all-video").find('source').attr('src', videoMetaDataArray[0]);
-    //         document.getElementById("all-video").load();
-    //         updateAllWorkVideo(0)
-    //     } else if (!direction && $("#workCarousel .item.active").find('video').attr('id') === 'video-1') {
-    //         $('.video-control').css('visibility', 'hidden');
-    //         $('.video-control-'+array.length).css('visibility', 'visible');
-    //         $("#all-video").find('source').attr('src', videoMetaDataArray[videoMetaDataArray.length-1]);
-    //         document.getElementById("all-video").load();
-    //         updateAllWorkVideo(videoMetaDataArray.length-1);
-    //     }
-    // }
-    // for (i = 0; i < videoMarkersArray.length; i++) {
-    //     console.log($('#workCarousel .item.active'));
-    //     if (videoMarkersArray[i].id === $('#workCarousel .active').attr('id')) {
-    //         if (direction) {
-    //             if (i + 2 > videoMarkersArray.length) {
-    //                 workmap.panTo(videoMarkersArray[0].getPosition());
-    //                 console.log(videoMarkersArray[0]);
-    //             } else {
-    //                 workmap.panTo(videoMarkersArray[i+1].getPosition());
-    //                 console.log(videoMarkersArray[i+1]);
-    //             }
-    //         } else {
-    //             if (i - 1 < 0) {
-    //                 workmap.panTo(videoMarkersArray[videoMarkersArray.length-1].getPosition());
-    //                 console.log(videoMarkersArray[videoMarkersArray.length-1])
-    //             } else {
-    //                 workmap.panTo(videoMarkersArray[i-1].getPosition());
-    //                 console.log(videoMarkersArray[videoMarkersArray.length-1])
-    //             }
-    //         }
-    //         console.log(videoMarkersArray[i].id)
-    //     }
-    // }
-    // });
+    
     $("#selectedCarousel").carousel({
         wrap: false
     });
