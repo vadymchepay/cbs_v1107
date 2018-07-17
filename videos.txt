@@ -1,8 +1,7 @@
- [
+﻿ [
   {
     "projectid": "0727",
     "enabled": 1,
-    "isselected": 1,
     "posttype": "production",
     "posttitlede": "Ein-Baum-Park",
     "posttitleen": "One-Tree-Park",
@@ -169,7 +168,6 @@
   {
     "projectid": "0769",
     "enabled": 1,
-    "isselected": 1,
     "posttype": "production",
     "posttitlede": "Dekochari Bikes",
     "posttitleen": "Dekochari Bikes",
@@ -196,7 +194,6 @@
   {
     "projectid": "0771",
     "enabled": 1,
-    "isselected": 1,
     "posttype": "production",
     "posttitlede": "Das Bananen-Tattoo",
     "posttitleen": "Banana Tattoos",
@@ -422,6 +419,7 @@
   {
     "projectid": "0892",
     "enabled": 1,
+    "isselected": 1,
     "posttype": "production",
     "posttitlede": "Gefährliche Haustiere",
     "posttitleen": "Crazy pets",
@@ -929,6 +927,7 @@
   {
     "projectid": "0968",
     "enabled": 1,
+    "isselected": 1,
     "posttype": "production",
     "posttitlede": "Blauer Vulkan",
     "posttitleen": "Blue Volcano ",
@@ -2415,6 +2414,7 @@
   {
     "projectid": "1289",
     "enabled": 1,
+    "isselected": 1,
     "posttype": "production",
     "posttitlede": "Die Geier Polizei",
     "posttitleen": "Vulture Bird Police",
@@ -5378,7 +5378,8 @@
   },
   {
     "projectid": 1012,
-    "enabled": 0,
+    "enabled": 1,
+    "isselected": 1,
     "posttype": "production",
     "posttitlede": "Joko & Klaas - Das Duell um die Welt: \n Das tanzende Gefängnis",
     "posttitleen": "Joko & Klaas - World Games:\n The Dancing Prison",
@@ -5884,7 +5885,8 @@
   },
   {
     "projectid": 1733,
-    "enabled": 0,
+    "enabled": 1,
+    "isselected": 1,
     "posttype": "production",
     "posttitlede": "Gefährlichste Brücke der Welt",
     "posttitleen": "The most dangerous bridge",

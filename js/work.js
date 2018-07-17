@@ -308,19 +308,22 @@ $(document).ready(function () {
             selVidCount--;
             $("#selectedCarousel").prev();
         } else {
-            $("#watch-movies").show();
+
+            $("#watch-movies").hide();
             $("#work-all-section").hide();
             $(".work-carousel-control").hide();
             setTimeout(function () {
-                if (!onExpore) {
-                    $("#video-bg").show();
-                    workReel2();
-                    onExpore = true;
+                if (onExpore) {
+                    onExpore = false;
                 }
                 $("#top-section").css({
                     position: 'relative',
                     'z-index': '1'
                 }).show();
+                $("#video-bg").show();
+                $("#top-section .left-side, #top-section .right-side").css('opacity', '1').show();
+                $("#top-section .darken-layer").css('opacity', '1').show();
+                $('.blur').css('filter', 'blur(5px)');
             }, 400);
             $("#work-section").animate({
                 left: '100%'
@@ -834,7 +837,11 @@ function workPlayPause() {
         var playBtn = eval(strPlayBtn);
         console.log(playBtn)
         playBtn.each(function (i, el) {
-            $(el).css('opacity', '1').show();
+            $(el).css({
+                'opacity': '1',
+                'display': 'block'
+            });
+
             console.log($(el));
         })
 

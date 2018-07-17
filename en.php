@@ -25,4 +25,19 @@ $watchMovies = 'Watch <br>movies';
 $aboutHeading = 'WE DOCUMENT <br>THE WORLD';
 $aboutText = 'We are an international movie production studio with locations around the globe. Our team of creative writers, daredevil VJs and charismatic hosts strives to capture the most breathtaking and yet undiscovered stories. We focus on factual content production for TV and web. Our documentaries, feature reports and investigative stories target a young and curious audience to which we provide a glimpse into some of the most interesting things our world and its people have to offer.';
 include ("home.php");
+
+
+
+//contacts
+
+
+
+
+
+
+//footer
+
+
+$legal = 'legal';
+
 ?>
