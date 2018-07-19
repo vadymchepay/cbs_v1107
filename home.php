@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--        <script src="js/pure-swipe.min.js"></script>-->
+    <!--        <script src="js/pure-swipe.min.js"></script>-->
     <!--    <script src="js/jquery.touchSwipe.min.js"></script>-->
 
 
@@ -111,11 +111,11 @@
                         <span class="icon-bar"></span>
                     </button>
                         <a href="<?php echo $currentLanguage?>.php" class="navbar-brand"><img class="img-responsive" src="img/logo.png" alt="Comberry"></a>
-                           
+
                         <div class="navbar-language-mobile dropdown">
-                        
-                                <?php echo $mobileLang?>
-                           
+
+                            <?php echo $mobileLang?>
+
 
                         </div>
                     </div>
@@ -192,7 +192,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="heading">Contact</h1>
+                            <h1 class="heading">
+                                <?php echo $contact?>
+                            </h1>
                         </div>
                     </div>
                 </div>
@@ -217,20 +219,24 @@
                                     <div class="carousel-inner">
                                         <div class="item active" id="malaysia">
                                             <div class="col-md-4 office">
-                                                <h3 class="additional">Asia HQ</h3>
-                                                <h3 class="location">Malaysia</h3>
-                                                <a href="mailto:malaysia@comberry.com" class="email"><img src="img/mail.png">malaysia@comberry.com</a>
+                                                <h3 class="additional">
+                                                    <?php echo $asia?>
+                                                </h3>
+                                                <h3 class="location">
+                                                    <?php echo $malaysia?>
+                                                </h3>
+                                                <a href="mailto:malaysia...comberry...com" class="email mail"><img src="img/mail.png">malaysia...comberry...com</a>
                                                 <p class="address">
-                                                    <b>Comberry Sdn. Bhd.</b><br> Q-Sentral
-                                                    <br> 50470, Kuala Lumpur<br> Malaysia
-                                                    <br>
+                                                    <?php echo $asiaAdres?>
                                                 </p>
                                                 <div class="regional-director">
-                                                    <h5>Regional director</h5>
+                                                    <h5>
+                                                        <?php echo $director?>
+                                                    </h5>
                                                     <div class="col-md-3 col-xs-4 portrait-container"><img src="img/simon-bethke.png" alt="Simon Bethke" class="img-responsive"></div>
                                                     <div class="col-md-9 col-xs-8">
                                                         <h4 class="name">Simon <br>Bethke</h4>
-                                                        <a href="mailto:malaysia@comberry.com"><img src="img/mail-sent-icon.png"></a>
+                                                        <a href="mailto:malaysia...comberry...com" class="mail"><img src="img/mail-sent-icon.png"></a>
                                                         <a href="tel:+60327775696"><img src="img/incoming-call.png"></a>
 
                                                     </div>
@@ -239,19 +245,24 @@
                                         </div>
                                         <div class="item" id="germany">
                                             <div class="col-md-4 office">
-                                                <h3 class="additional">Europe HQ</h3>
-                                                <h3 class="location">Germany</h3>
-                                                <a href="mailto:germany@comberry.com" class="email"><img src="img/mail.png">germany@comberry.com</a>
+                                                <h3 class="additional">
+                                                    <?php echo $europe?>
+                                                </h3>
+                                                <h3 class="location">
+                                                    <?php echo $germany?>
+                                                </h3>
+                                                <a href="mailto:germany...comberry...com" class="email mail"><img src="img/mail.png">germany...comberry...com</a>
                                                 <p class="address">
-                                                    <b>Comberry GmbH</b><br> Firkenweg 7<br> 85774 Unterföhring<br> Germany
-                                                    <br>
+                                                    <?php echo $germanyAdres?>
                                                 </p>
                                                 <div class="regional-director">
-                                                    <h5>Regional director</h5>
+                                                    <h5>
+                                                        <?php echo $director?>
+                                                    </h5>
                                                     <div class="col-md-3 col-xs-4 portrait-container"><img src="img/boris-werschbizky.png" alt="Boris Werschbizky" class="img-responsive"></div>
                                                     <div class="col-md-9 col-xs-8">
                                                         <h4 class="name">Boris <br>Werschbizky</h4>
-                                                        <a href="mailto:germany@comberry.com"><img src="img/mail-sent-icon.png"></a>
+                                                        <a href="mailto:germany...comberry...com" class="mail"><img src="img/mail-sent-icon.png"></a>
                                                         <a href="tel:+498999650390"><img src="img/incoming-call.png"></a>
                                                     </div>
                                                 </div>
@@ -259,18 +270,24 @@
                                         </div>
                                         <div class="item" id="russia">
                                             <div class="col-md-4 office">
-                                                <h3 class="additional">EASTERN EUROPE HQ</h3>
-                                                <h3 class="location">RUSSIA</h3>
-                                                <a href="mailto:russia@comberry.com" class="email"><img src="img/mail.png">russia@comberry.com</a>
+                                                <h3 class="additional">
+                                                    <?php echo $easternEurope?>
+                                                </h3>
+                                                <h3 class="location">
+                                                    <?php echo $russia?>
+                                                </h3>
+                                                <a href="mailto:russia...comberry...com" class="email mail"><img src="img/mail.png">russia...comberry...com</a>
                                                 <p class="address">
-                                                    <b>Comberry Russia</b><br> Moscow
+                                                    <?php echo $russiaAdres?>
                                                 </p>
                                                 <div class="regional-director">
-                                                    <h5>Regional director</h5>
+                                                    <h5>
+                                                        <?php echo $director?>
+                                                    </h5>
                                                     <div class="col-md-3 col-xs-4 portrait-container"><img src="img/niko-karasek.png" alt="Niko Karasek" class="img-responsive"></div>
                                                     <div class="col-md-9 col-xs-8">
                                                         <h4 class="name">Niko <br>Karasek</h4>
-                                                        <a href="mailto:russia@comberry.com"><img src="img/mail-sent-icon.png"></a>
+                                                        <a href="mailto:russia...comberry...com" class="mail"><img src="img/mail-sent-icon.png"></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -278,50 +295,60 @@
                                         <div class="item" id="boston">
                                             <div class="col-md-4 office">
                                                 <h3 class="additional"></h3>
-                                                <h3 class="location">UNITED STATES</h3>
-                                                <a href="mailto:us@comberry.com" class="email"><img src="img/mail.png">us@comberry.com</a>
+                                                <h3 class="location">
+                                                    <?php echo $usa?>
+                                                </h3>
+                                                <a href="mailto:us...comberry...com" class="email mail"><img src="img/mail.png">us...comberry...com</a>
                                                 <p class="address">
-                                                    <b>Comberry USA</b><br> Boston
+                                                    <?php echo $usaAdres?>
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="item" id="china">
                                             <div class="col-md-4 office">
                                                 <h3 class="additional"></h3>
-                                                <h3 class="location">CHINA</h3>
-                                                <a href="mailto:china@comberry.com" class="email"><img src="img/mail.png">china@comberry.com</a>
+                                                <h3 class="location">
+                                                    <?php echo $china?>
+                                                </h3>
+                                                <a href="mailto:china...comberry...com" class="email mail"><img src="img/mail.png">china...comberry...com</a>
                                                 <p class="address">
-                                                    <b>Comberry China</b><br> Shanghai
+                                                    <?php echo $chinaAdres?>
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="item" id="india">
                                             <div class="col-md-4 office">
                                                 <h3 class="additional"></h3>
-                                                <h3 class="location">INDIA</h3>
-                                                <a href="mailto:india@comberry.com" class="email"><img src="img/mail.png">india@comberry.com</a>
+                                                <h3 class="location">
+                                                    <?php echo $india?>
+                                                </h3>
+                                                <a href="mailto:india...comberry...com" class="email mail"><img src="img/mail.png">india...comberry...com</a>
                                                 <p class="address">
-                                                    <b>Comberry India</b><br> Bangalore
+                                                    <?php echo $indiaAdres?>
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="item" id="tokyo">
                                             <div class="col-md-4 office">
                                                 <h3 class="additional"></h3>
-                                                <h3 class="location">JAPAN</h3>
-                                                <a href="mailto:japan@comberry.com" class="email"><img src="img/mail.png">japan@comberry.com</a>
+                                                <h3 class="location">
+                                                    <?php echo $japan?>
+                                                </h3>
+                                                <a href="mailto:japan...comberry...com" class="email mail"><img src="img/mail.png">japan...comberry...com</a>
                                                 <p class="address">
-                                                    <b>Comberry Japan</b><br> Tokyo
+                                                    <?php echo $japanAdres?>
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="item" id="berlin">
                                             <div class="col-md-4 office">
                                                 <h3 class="additional"></h3>
-                                                <h3 class="location">BERLIN</h3>
-                                                <a href="mailto:berlin@comberry.com" class="email"><img src="img/mail.png">berlin@comberry.com</a>
+                                                <h3 class="location">
+                                                    <?php echo $berlin?>
+                                                </h3>
+                                                <a href="mailto:berlin...comberry...com" class="email mail"><img src="img/mail.png">berlin...comberry...com</a>
                                                 <p class="address">
-                                                    <b>Comberry GmbH</b><br> Proskauer Str. 25 <br> 10247 Berlin <br> Germany <br>
+                                                    <?php echo $berlinAdres?>
                                                 </p>
                                             </div>
                                         </div>
@@ -334,7 +361,7 @@
             </div>
             <!--Contact-->
         </div>
-<!--
+
 
 
 
@@ -344,7 +371,12 @@
             <div class="container  ">
                 <div class="row">
                     <div class="col-md-6 col-xs-6">© 2018 Comberrystudios</div>
-                    <div class="col-md-6 col-xs-6" align="right"><a id="open-legal-notice transition" href="legal-notice.php"><?php echo $legal?></a></div>
+                    <div class="col-md-6 col-xs-6" align="right">
+                        <a id="open-legal-notice transition" href="legal-notice.php">
+                            <?php echo $legal?>
+                        </a>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -394,13 +426,14 @@
                 </li>
             </ul>
         </div>
-        <!--Mobile sidebar-->
 
-        <!--Scripts-->
-        <script src="js/map.js"></script>
-        <script src="js/contact-carousel.js"></script>
-        <script src="js/mobile-menu.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr3O2RS5i5_F7oDmyErmxFn3TpBfzaEY&callback=myMap"></script>
+        <!--Mobile sidebar-->
+    </div>
+    <!--Scripts-->
+    <script src="js/map.js"></script>
+    <script src="js/contact-carousel.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr3O2RS5i5_F7oDmyErmxFn3TpBfzaEY&callback=myMap"></script>
 </body>
 
 </html>
